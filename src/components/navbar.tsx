@@ -1,6 +1,8 @@
 import Image from "next/image";
 import Link from "next/link";
+import { Suspense } from "react";
 import { ExportButton } from "./buttons/export-button";
+import FormatButton from "./buttons/format-button";
 import { ShareButton } from "./buttons/share-button";
 import { Button } from "./ui/button";
 
@@ -12,7 +14,10 @@ export function Navbar() {
       </Link>
       <nav className="space-x-2">
         <ExportButton />
-        <ShareButton />
+        <Suspense>
+          <ShareButton />
+        </Suspense>
+        <FormatButton />
         <Button variant="ghost" asChild>
           <a href="https://www.paypal.com/paypalme/cresvinn" target="_blank">
             💙 PayPal

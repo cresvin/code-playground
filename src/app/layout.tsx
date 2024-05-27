@@ -1,6 +1,7 @@
 import { cn } from "@/lib/utils";
 import type { Metadata } from "next";
 import { JetBrains_Mono, Source_Sans_3 } from "next/font/google";
+import { Suspense } from "react";
 import { Toaster } from "sonner";
 import "./globals.css";
 import Providers from "./providers";
@@ -32,7 +33,9 @@ export default function RootLayout({
           JetBrainsMono.variable
         )}
       >
-        <Providers>{children}</Providers>
+        <Suspense>
+          <Providers>{children}</Providers>
+        </Suspense>
         <Toaster position="top-center" theme="dark" />
       </body>
     </html>
