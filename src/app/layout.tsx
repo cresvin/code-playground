@@ -1,5 +1,5 @@
 import { cn } from "@/lib/utils";
-import type { Metadata } from "next";
+import type { Metadata, Viewport } from "next";
 import { JetBrains_Mono, Source_Sans_3 } from "next/font/google";
 import { Suspense } from "react";
 import { Toaster } from "sonner";
@@ -15,8 +15,30 @@ const JetBrainsMono = JetBrains_Mono({
   variable: "--jet-brains-mono",
 });
 
+export const viewport: Viewport = {
+  themeColor: "#09090b",
+};
+
 export const metadata: Metadata = {
-  title: "Online Code Playground | CodePlay",
+  title: {
+    default: "Online Code Playground | CodePlay",
+    template: "%s | CodePlay",
+  },
+  description:
+    "HTML, CSS, and JavaScript with automatic live-preview is an indispensable tool for programmers and web development enthusiasts. CodePlay is perfect for experimenting with code in real-time, facilitating learning and skill development in programming.",
+  keywords: [
+    "coding",
+    "sandbox",
+    "code playground",
+    "codepen",
+    "programming",
+    "codesandbox",
+    "dev",
+    "develop",
+    "html",
+    "css",
+    "javascript",
+  ],
 };
 
 export default function RootLayout({
