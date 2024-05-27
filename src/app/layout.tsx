@@ -1,4 +1,5 @@
 import { cn } from "@/lib/utils";
+import { Analytics } from "@vercel/analytics/react";
 import type { Metadata, Viewport } from "next";
 import { JetBrains_Mono, Source_Sans_3 } from "next/font/google";
 import { Suspense } from "react";
@@ -58,6 +59,7 @@ export default function RootLayout({
         <Suspense>
           <Providers>{children}</Providers>
         </Suspense>
+        <Analytics />
         <Toaster position="top-center" theme="dark" />
       </body>
     </html>
