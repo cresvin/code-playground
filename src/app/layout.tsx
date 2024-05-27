@@ -14,7 +14,7 @@ const JetBrainsMono = JetBrains_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "Online Code Playground",
+  title: "Online Code Playground | CodePlay",
 };
 
 export default function RootLayout({
