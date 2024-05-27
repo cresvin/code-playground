@@ -2,6 +2,7 @@
 
 import { usePlayground } from "@/contexts/playground-context";
 import { CodeEditor } from "./code-editor";
+import { PanelHeader } from "./panel-header";
 import { Preview } from "./preview";
 import {
   ResizableHandle,
@@ -18,6 +19,7 @@ export function Panels() {
         <ResizablePanelGroup direction="vertical">
           {/* html panel */}
           <ResizablePanel defaultSize={50}>
+            <PanelHeader title="HTML" circle={true} circleColor="#e34c26" />
             <CodeEditor
               language="html"
               value={html}
@@ -27,6 +29,7 @@ export function Panels() {
           <ResizableHandle />
           {/* js panel */}
           <ResizablePanel defaultSize={50}>
+            <PanelHeader title="JS" circle={true} circleColor="#f0db4f" />
             <CodeEditor
               language="javascript"
               value={js}
@@ -40,6 +43,7 @@ export function Panels() {
         <ResizablePanelGroup direction="vertical">
           {/* css panel */}
           <ResizablePanel defaultSize={50}>
+            <PanelHeader title="CSS" circle={true} circleColor="#264de4" />
             <CodeEditor
               language="css"
               value={css}
@@ -49,6 +53,7 @@ export function Panels() {
           <ResizableHandle />
           {/* preview panel */}
           <ResizablePanel className="flex flex-col" defaultSize={50}>
+            <PanelHeader title="Preview" circle={true} />
             <Preview />
           </ResizablePanel>
         </ResizablePanelGroup>
