@@ -37,5 +37,9 @@ export function ExportButton() {
     });
   };
 
-  return <Button onClick={handleExportProject}>Download</Button>;
+  return (
+    <Button variant="ghost" onClick={handleExportProject}>
+      📦 Download
+    </Button>
+  );
 }

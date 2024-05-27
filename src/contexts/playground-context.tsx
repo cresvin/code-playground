@@ -1,3 +1,4 @@
+import { useSearchParams } from "next/navigation";
 import { createContext, useContext, useEffect, useState } from "react";
 
 type Editor = "html" | "css" | "js";
@@ -17,10 +18,18 @@ export function PlaygroundContextProvider({
 }: {
   children: React.ReactNode;
 }) {
+  const searchParams = useSearchParams();
+
   const [html, setHtml] = useState("");
   const [css, setCss] = useState("");
   const [js, setJs] = useState("");
   const [srcDoc, setSrcDoc] = useState("");
+
+  useEffect(() => {
+    setHtml(searchParams.get("html") || "");
+    setCss(searchParams.get("css") || "");
+    setJs(searchParams.get("js") || "");
+  }, [searchParams]);
 
   const changeEditorValue = (type: Editor, value: string) => {
     switch (type) {
